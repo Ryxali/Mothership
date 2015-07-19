@@ -20,7 +20,7 @@ public class SMG_Turret : Turret {
 				Projectile p = (Projectile)Instantiate (bullet);
 				p.transform.position = spawnPoint.position;
 				p.tag = tag;
-				p.rigidbody2D.velocity = (target.transform.position - spawnPoint.position).normalized * projectileSpeed;
+				p.GetComponent<Rigidbody2D>().velocity = (target.transform.position - spawnPoint.position).normalized * projectileSpeed;
 				GameController.instance.projectiles.add (p);
 
 			}

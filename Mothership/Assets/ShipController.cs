@@ -33,8 +33,8 @@ public class ShipController : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if (online) {
-			rigidbody2D.velocity = transform.TransformDirection(Vector2.up) * Input.GetAxis("Vertical");
-			rigidbody2D.angularVelocity = -Input.GetAxis("Horizontal") * 90;
+			GetComponent<Rigidbody2D>().velocity = transform.TransformDirection(Vector2.up) * Input.GetAxis("Vertical");
+			GetComponent<Rigidbody2D>().angularVelocity = -Input.GetAxis("Horizontal") * 90;
 		}
 	}
 }

@@ -10,13 +10,13 @@ public class CameraZoom : MonoBehaviour {
 	private float curZoom = 10;
 	// Use this for initialization
 	void Start () {
-		baseSize = camera.orthographicSize;
+		baseSize = GetComponent<Camera>().orthographicSize;
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		curZoom -= Input.GetAxis ("Mouse ScrollWheel") * 4;
 		curZoom = Mathf.Clamp (curZoom, maxZoom, minZoom);
-		camera.orthographicSize = baseSize * curZoom / 10.0f;
+		GetComponent<Camera>().orthographicSize = baseSize * curZoom / 10.0f;
 	}
 }

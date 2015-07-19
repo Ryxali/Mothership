@@ -54,7 +54,7 @@ public class Turret : MonoBehaviour {
 		if (Application.isPlaying) {
 			if(online) {
 				targets = findTargets (maxTargets);
-				if(targets != null) {
+				if(targets != null && targets.Length > 0) {
 					fire();
 				}
 			}

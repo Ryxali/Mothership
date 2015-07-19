@@ -15,7 +15,7 @@ public class Plasma_Turret : Turret {
 				Projectile p = (Projectile) Instantiate(bullet);
 				p.transform.position = transform.position + (target.transform.position - transform.TransformPoint(transform.localPosition)).normalized * spawnDistance;
 				p.tag = tag;
-				p.rigidbody2D.velocity = (target.transform.position - p.transform.position).normalized * projectileSpeed;
+				p.GetComponent<Rigidbody2D>().velocity = (target.transform.position - p.transform.position).normalized * projectileSpeed;
 				GameController.instance.projectiles.add(p);
 			}
 
